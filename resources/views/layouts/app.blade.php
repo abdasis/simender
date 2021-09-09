@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
     @livewireStyles
     @stack('css')
 </head>
