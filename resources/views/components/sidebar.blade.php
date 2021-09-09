@@ -84,7 +84,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../../index2.html" class="nav-link">
+                                <a href="{{route('setting.whatsapp')}}" class="nav-link {{request()->is('admin/setting/whatsapp') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>WhatsApps</p>
                                 </a>

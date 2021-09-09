@@ -40,9 +40,15 @@ class Sistem extends Component
     public function simpan()
     {
         $this->validate();
+        if (file_exists(public_path('icons/logo.png'))){
+            \File::delete(public_path('icons/logo.png'));
+        }
+
         if (!empty($this->logo)){
             $this->logo->storeAs('icons', 'logo.png');
         }
+
+
         try {
             $pengaturan = Setting::first();
             if (empty($pengaturan))

@@ -33,6 +33,7 @@ class Tambah extends Component
             $pengguna->save();
             $this->alert('success', 'Data berhasil disimpan');
             kirimNotif($this->telepon, 'Hai bro pengajuan sim anda sudah dibuat');
+            $this->reset();
         }catch (QueryException $exception){
             $this->alert('error', $exception->getMessage());
         }

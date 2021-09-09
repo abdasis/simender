@@ -3,9 +3,19 @@
 
 
 function kirimNotif ($nomor, $message){
+
+    $dataWhatsapp = \App\Models\Whatsapp::first();
+    if (empty($dataWhatsapp)){
+       session()->flash('whatsappError', 'Notifikasi tidak terkirim karna pengaturan whatsapp belum di set');
+       return false;
+    }else{
+        $token = $dataWhatsapp->token;
+        $url = $dataWhatsapp->url;
+    }
+
     return \Http::withHeaders([
-        'Authorization' => '7f7okJISNmplDdGKCbpUsmkkCWDZwTR8VkdSA1xRJuZOGKt4WFyTgt0dm2v5h2l9'
-    ])->post('https://cepogo.wablas.com/api/send-message',[
+        'Authorization' => $token
+    ])->post($url . '/api/send-message',[
         'phone' => $nomor,
         'message' => $message,
         'secret' => false,

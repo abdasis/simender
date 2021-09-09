@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Pengguna;
 
+use App\Http\Traits\AlertConfirm;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
@@ -10,6 +11,16 @@ use App\Models\Pengguna;
 class PenggunaTable extends DataTableComponent
 {
 
+    use AlertConfirm;
+
+    protected $listeners = ['delete', 'batal'];
+
+    public function delete()
+    {
+        $pengguna = Pengguna::find($this->model_id);
+        $pengguna->delete();
+        $this->alert('success', 'Data berhasil dihapus');
+    }
     public function columns(): array
     {
         return [

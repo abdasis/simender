@@ -2,30 +2,21 @@
 
 namespace App\Http\Livewire\Pengguna;
 
+use App\Http\Traits\AlertConfirm;
 use App\Models\Pengguna;
 use Livewire\Component;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 
 class Semua extends Component
 {
+    use AlertConfirm;
     public $keyword;
-    public function columns(): array
-    {
-        return [
-            Column::make('Name')
-                ->sortable()
-                ->searchable(),
-            Column::make('E-mail', 'email')
-                ->sortable()
-                ->searchable(),
-            Column::make('Verified', 'email_verified_at')
-                ->sortable(),
-        ];
-    }
 
-    public function query(): Builder
+    protected $listeners = ['batal', 'delete'];
+
+    public function delete()
     {
-        return Pengguna::query();
+        
     }
 
 }
