@@ -18,7 +18,6 @@ class Sistem extends Component
         return[
             'nama_aplikasi' => 'required',
             'tagline' => 'required',
-            'logo' => 'required|mimes:png',
             'text_footer' => 'required'
         ];
     }
@@ -46,7 +45,22 @@ class Sistem extends Component
         }
         try {
             $pengaturan = Setting::first();
-            if ()
+            if (empty($pengaturan))
+            {
+                $pengaturan = new Setting();
+                $pengaturan->nama_aplikasi = $this->nama_aplikasi;
+                $pengaturan->tagline = $this->tagline;
+                $pengaturan->logo = 'icons/logo.png';
+                $pengaturan->text_footer = $this->text_footer;
+                $pengaturan->save();
+            }else{
+                $pengaturan = Setting::first();
+                $pengaturan->nama_aplikasi = $this->nama_aplikasi;
+                $pengaturan->tagline = $this->tagline;
+                $pengaturan->logo = 'icons/logo.png';
+                $pengaturan->text_footer = $this->text_footer;
+                $pengaturan->save();
+            }
             $this->alert('success', 'Pengaturan Berhasil Diperbarui');
         }catch (QueryException $exception){
             $this->alert('error', $exception->getMessage());
