@@ -2,8 +2,8 @@
     <aside class="main-sidebar sidebar-light-blue elevation-1">
         <!-- Brand Logo -->
         <a href="{{route('dashboard')}}" class="brand-link">
-            <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
+            <img src="{{ asset('icons/logo.png') ?? asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">{{\App\Models\Setting::first()->nama_aplikasi ?? 'Nama Aplikasi'}}</span>
         </a>
 
         <!-- Sidebar -->
@@ -11,10 +11,10 @@
             <!-- Sidebar user (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{asset('dist/img/user8-128x128.jpg')}}" class="img-circle " alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Abd. Asis</a>
+                    <a href="#" class="d-block">{{Auth::user()->name}}</a>
                 </div>
             </div>
 
@@ -68,7 +68,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item {{request()->is('admin/setting/*') ? 'menu-open' : ''}}">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-tools"></i>
                             <p>
@@ -78,7 +78,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
+                                <a href="{{route('setting.sistem')}}" class="nav-link {{request()->is('admin/setting/sistem') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>System</p>
                                 </a>

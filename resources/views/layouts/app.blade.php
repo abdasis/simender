@@ -61,7 +61,7 @@
         <div class="float-right d-none d-sm-block">
             <b>Version</b> 3.1.0
         </div>
-        <strong>Copyright &copy; 2021 <a href="https://adminlte.io">SIMENDER</a>.</strong> All rights reserved. By Abd. Asis
+        <strong>Copyright &copy; 2021 <a href="https://adminlte.io">{{\App\Models\Setting::first()->text_footer ?? 'Text Footer'}}</a>.</strong> All rights reserved. By Abd. Asis
     </footer>
 
     <!-- Control Sidebar -->

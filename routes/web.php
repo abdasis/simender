@@ -3,6 +3,7 @@
 use App\Http\Livewire\Pengguna\Semua;
 use App\Http\Livewire\Pengguna\Sunting;
 use App\Http\Livewire\Pengguna\Tambah;
+use App\Http\Livewire\Setting\Sistem;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return redirect()->route('login');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
@@ -25,6 +26,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::get('semua', Semua::class)->name('pengguna.semua');
         Route::get('tambah', Tambah::class)->name('pengguna.tambah');
         Route::get('sunting/{id}', Sunting::class)->name('pengguna.sunting');
+    });
+
+    Route::group(['prefix' => 'setting'], function(){
+       Route::get('sistem', Sistem::class)->name('setting.sistem');
     });
 });
 
