@@ -10,7 +10,7 @@ function kirimNotif ($nomor, $message){
        return false;
     }else{
         $token = $dataWhatsapp->token;
-        $url = $dataWhatsapp->url;
+        $url = $dataWhatsapp->domain;
     }
 
     return \Http::withHeaders([
