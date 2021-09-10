@@ -32,7 +32,7 @@ class Tambah extends Component
             $pengguna->masa_berlaku = $this->masa_berlaku;
             $pengguna->save();
             $this->alert('success', 'Data berhasil disimpan');
-            kirimNotif($this->telepon, 'Hai bro pengajuan sim anda sudah dibuat');
+            kirimNotif($this->telepon, 'Hai ' . \Str::title($this->nama_lengkap) . ' ' . \Str::upper($this->jenis_sim) . ' telah terdaftar di satpos 1329 Satlantas Polres Tegal Rembang masa berlaku SIM anda sampai dengan ' . $this->masa_berlaku);
             $this->reset();
         }catch (QueryException $exception){
             $this->alert('error', $exception->getMessage());
