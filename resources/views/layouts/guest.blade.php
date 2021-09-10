@@ -17,7 +17,9 @@
 <body>
 
 
-{{$slot}}
+<div class="container">
+    {{$slot}}
+</div>
 <!-- /.login-box -->
 
 <!-- jQuery -->
