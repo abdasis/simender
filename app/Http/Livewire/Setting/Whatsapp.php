@@ -9,6 +9,14 @@ class Whatsapp extends Component
 {
     public $token, $domain;
 
+    public function mount()
+    {
+        $whatsapp = \App\Models\Whatsapp::first();
+        if (!empty($whatsapp)){
+            $this->token = $whatsapp->token;
+            $this->domain = $whatsapp->domain;
+        }
+    }
     public function simpan()
     {
         try {

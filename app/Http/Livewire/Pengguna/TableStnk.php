@@ -8,7 +8,7 @@ use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Pengguna;
 
-class PenggunaTable extends DataTableComponent
+class TableStnk extends DataTableComponent
 {
 
     use AlertConfirm;
@@ -21,6 +21,15 @@ class PenggunaTable extends DataTableComponent
         $pengguna->delete();
         $this->alert('success', 'Data berhasil dihapus');
     }
+
+    public function setTableDataClass(Column $column, $row): ?string
+    {
+        if ($column->column() == 'layanan') {
+            return 'text-uppercase ';
+        }
+        return null;
+    }
+
     public function columns(): array
     {
         return [
@@ -43,6 +52,9 @@ class PenggunaTable extends DataTableComponent
                 ->sortable()
                 ->searchable(),
 
+            Column::make('Layanan', 'layanan')
+                ->sortable()
+                ->searchable(),
 
             Column::make('Tanggal Pendaftaran', 'tanggal_pendaftaran')
                 ->sortable()
@@ -68,6 +80,7 @@ class PenggunaTable extends DataTableComponent
 
     public function query(): Builder
     {
-        return Pengguna::query()->where('layanan', 'sim');
+        return Pengguna::query()
+            ->where('layanan', 'stnk');
     }
 }

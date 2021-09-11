@@ -18,7 +18,8 @@ class CreatePenggunasTable extends Migration
             $table->string('nama_lengkap');
             $table->date('tanggal_lahir');
             $table->string('telepon');
-            $table->string('jenis_sim');
+            $table->string('layanan');
+            $table->string('jenis_sim')->nullable();
             $table->date('tanggal_pendaftaran');
             $table->date('masa_berlaku');
             $table->softDeletes();

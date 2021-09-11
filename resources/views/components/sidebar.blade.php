@@ -60,9 +60,15 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('pengguna.semua')}}" class="nav-link {{request()->is('admin/pengguna/semua') ? 'active' : ''}}">
+                                <a href="{{route('pengguna.semua')}}" class="nav-link {{request()->is('admin/pengguna/data-sim') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Semua Data</p>
+                                    <p>Data SIM</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('pengguna.stnk')}}" class="nav-link {{request()->is('admin/pengguna/data-stnk') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Data STNK</p>
                                 </a>
                             </li>
                         </ul>
@@ -93,7 +99,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{route('dashboard')}}" class="nav-link">
+                        <a href="{{route('laporan')}}" class="nav-link">
                             <i class="nav-icon fas fa-paper-plane"></i>
                             <p>
                                 Histori Pengingat

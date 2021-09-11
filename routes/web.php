@@ -23,7 +23,8 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::group(['prefix' => 'pengguna'], function(){
-        Route::get('semua', Semua::class)->name('pengguna.semua');
+        Route::get('data-sim', Semua::class)->name('pengguna.semua');
+        Route::get('data-stnk', \App\Http\Livewire\Pengguna\SemuaStnk::class)->name('pengguna.stnk');
         Route::get('tambah', Tambah::class)->name('pengguna.tambah');
         Route::get('sunting/{id}', Sunting::class)->name('pengguna.sunting');
     });
@@ -31,6 +32,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::group(['prefix' => 'setting'], function(){
        Route::get('sistem', Sistem::class)->name('setting.sistem');
        Route::get('whatsapp', \App\Http\Livewire\Setting\Whatsapp::class)->name('setting.whatsapp');
+    });
+
+    Route::group(['prefix' => 'laporan', 'middleware' => 'auth'], function(){
+        Route::get('pengiriman', \App\Http\Livewire\Laporan\Pengiriman::class)->name('laporan');
     });
 });
 
