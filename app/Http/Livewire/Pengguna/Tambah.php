@@ -16,7 +16,7 @@ class Tambah extends Component
             'nama_lengkap' => 'required',
             'tanggal_lahir' => 'required',
             'telepon' => 'required',
-            'jenis_sim' => 'required',
+            'jenis_sim' => 'required_if:layanan,==,sim',
             'tanggal_pendaftaran' => 'required',
             'masa_berlaku' => 'required',
             'layanan' => 'required'
