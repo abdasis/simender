@@ -44,7 +44,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-item {{request()->is('admin/pengguna/*') ? 'menu-open active' : ''}}">
+                    <li class="nav-item {{request()->is('admin/sim/*') ? 'menu-open active' : ''}}">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-id-card-alt"></i>
                             <p>
