@@ -44,14 +44,19 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Tanggal Pendaftaran</label>
-                            <input type="date" wire:model="tanggal_pendaftaran" name="" placeholder="Masukan Nama Lengkap" class="form-control" id="">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Masa Berlaku</label>
-                            <input type="date" wire:model="masa_berlaku" name="" placeholder="Masukan Nama Lengkap" class="form-control" id="">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Tanggal Pendaftaran</label>
+                                    <input type="date" wire:model="tanggal_pendaftaran" name="" placeholder="Masukan Nama Lengkap" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Masa Berlaku</label>
+                                    <input type="date" wire:model="masa_berlaku" name="" placeholder="Masukan Nama Lengkap" class="form-control" id="">
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">

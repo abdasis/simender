@@ -27,28 +27,40 @@
 
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Identitas Kendaraan</label>
-                            <input type="text" class="form-control" wire:model="identitas_kendaraan" name="" id="" placeholder="Identitas Kendaraan">
-                            <x-error-message error="identitas_kendaraan"/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Identitas Kendaraan</label>
+                                    <input type="text" class="form-control" wire:model="identitas_kendaraan" name="" id="" placeholder="Identitas Kendaraan">
+                                    <x-error-message error="identitas_kendaraan"/>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Nomor Polisi</label>
+                                    <input type="text" class="form-control" wire:model="nopol" name="" id="" placeholder="Nomor Polisi">
+                                    <x-error-message error="nopol"/>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Nomor Polisi</label>
-                            <input type="text" class="form-control" wire:model="nopol" name="" id="" placeholder="Nomor Polisi">
-                            <x-error-message error="nopol"/>
-                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Waktu Sidang</label>
+                                    <input type="date" class="form-control" wire:model="waktu_sidang" name="" id="">
+                                    <x-error-message error="waktu_sidang"/>
+                                </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="">Waktu Sidang</label>
-                            <input type="date" class="form-control" wire:model="waktu_sidang" name="" id="">
-                            <x-error-message error="waktu_sidang"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Tempat Sidang</label>
-                            <input type="text" class="form-control" wire:model="tempat_sidang" placeholder="Tempat sidang" name="" id="">
-                            <x-error-message error="tempat_sidang"/>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Tempat Sidang</label>
+                                    <input type="text" class="form-control" wire:model="tempat_sidang" placeholder="Tempat sidang" name="" id="">
+                                    <x-error-message error="tempat_sidang"/>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">

@@ -26,33 +26,43 @@
                             <x-error-message error="telepon"/>
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Identitas Kendaraan</label>
-                            <input type="text" class="form-control" placeholder="Identitas Kendaraan" wire:model="identitas_kendaraan" name="" id="">
-                            <x-error-message error="identitas_kendaraan"/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Identitas Kendaraan</label>
+                                    <input type="text" class="form-control" placeholder="Identitas Kendaraan" wire:model="identitas_kendaraan" name="" id="">
+                                    <x-error-message error="identitas_kendaraan"/>
 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Nomor Polisi</label>
+                                    <input type="text" class="form-control" placeholder="M 4515 JR " wire:model="nopol" name="" id="">
+                                    <x-error-message error="nopol"/>
+
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Nomor Polisi</label>
-                            <input type="text" class="form-control" placeholder="M 4515 JR " wire:model="nopol" name="" id="">
-                            <x-error-message error="nopol"/>
+                       <div class="row">
+                           <div class="col-md-6">
+                               <div class="form-group">
+                                   <label for="">Pajak Tahunan</label>
+                                   <input type="date" class="form-control" wire:model="pajak_tahunan" name="" id="">
+                                   <x-error-message error="pajak_tahunan"/>
 
-                        </div>
+                               </div>
+                           </div>
+                           <div class="col-md-6">
+                               <div class="form-group">
+                                   <label for="">Pajak 5  Tahunan</label>
+                                   <input type="date" class="form-control" wire:model="pajak_lima_tahun" name="" id="">
+                                   <x-error-message error="pajak_lima_tahun"/>
 
-                        <div class="form-group">
-                            <label for="">Pajak Tahunan</label>
-                            <input type="date" class="form-control" wire:model="pajak_tahunan" name="" id="">
-                            <x-error-message error="pajak_tahunan"/>
-
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Pajak 5  Tahunan</label>
-                            <input type="date" class="form-control" wire:model="pajak_lima_tahun" name="" id="">
-                            <x-error-message error="pajak_lima_tahun"/>
-
-                        </div>
+                               </div>
+                           </div>
+                       </div>
 
                         <div class="form-group">
                             <button class="btn btn-primary"><i class="fa fa-save mr-1"></i>Simpan Data</button>

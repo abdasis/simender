@@ -9,7 +9,7 @@ use Livewire\Component;
 class Sunting extends Component
 {
 
-    public $nama_lengkap, $tanggal_lahir, $telepon, $waktu_sidang, $pasal_pelanggaran, $identitas_kendaraan, $nopol;
+    public $nama_lengkap, $tanggal_lahir, $telepon, $waktu_sidang, $pasal_pelanggaran, $identitas_kendaraan, $nopol, $tempat_sidang;
     public $tilang_id;
 
     public function mount($id)
