@@ -44,11 +44,11 @@
                         </a>
                     </li>
 
-                    <li class="nav-item {{request()->is('admin/pengguna/*') ? 'menu-open' : ''}}">
+                    <li class="nav-item {{request()->is('admin/pengguna/*') ? 'menu-open active' : ''}}">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-users"></i>
+                            <i class="nav-icon fas fa-id-card-alt"></i>
                             <p>
-                                Pengguna
+                                Data SIM
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -62,19 +62,63 @@
                             <li class="nav-item">
                                 <a href="{{route('pengguna.semua')}}" class="nav-link {{request()->is('admin/pengguna/data-sim') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Data SIM</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('pengguna.stnk')}}" class="nav-link {{request()->is('admin/pengguna/data-stnk') ? 'active' : ''}}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Data STNK</p>
+                                    <p>Semua Data</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
 
-                    <li class="nav-item {{request()->is('admin/setting/*') ? 'menu-open' : ''}}">
+
+                    <li class="nav-item {{request()->is('admin/stnk/*') ? 'menu-open active' : ''}}">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-address-card"></i>
+                            <p>
+                                Data STNK
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item ">
+                                <a href="{{route('stnk.tambah')}}" class="nav-link {{request()->is('admin/stnk/tambah') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Tambah</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('stnk.semua')}}" class="nav-link {{request()->is('admin/stnk/data-sim') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Semua Data</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item {{request()->is('admin/tilang/*') ? 'menu-open active' : ''}}">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-credit-card"></i>
+                            <p>
+                                Tilang
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item ">
+                                <a href="{{route('tilang.tambah')}}" class="nav-link {{request()->is('admin/pengguna/tambah') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Tambah</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('tilang.semua')}}" class="nav-link {{request()->is('admin/pengguna/data-sim') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Semua Data</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item {{request()->is('admin/setting/*') ? 'menu-open active' : ''}}">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-tools"></i>
                             <p>

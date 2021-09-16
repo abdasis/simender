@@ -22,11 +22,22 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-    Route::group(['prefix' => 'pengguna'], function(){
-        Route::get('data-sim', Semua::class)->name('pengguna.semua');
-        Route::get('data-stnk', \App\Http\Livewire\Pengguna\SemuaStnk::class)->name('pengguna.stnk');
+    Route::group(['prefix' => 'sim'], function(){
+        Route::get('semua', Semua::class)->name('pengguna.semua');
         Route::get('tambah', Tambah::class)->name('pengguna.tambah');
         Route::get('sunting/{id}', Sunting::class)->name('pengguna.sunting');
+    });
+
+    Route::group(['prefix' => 'stnk'], function (){
+        Route::get('tambah', \App\Http\Livewire\Stnk\Tambah::class)->name('stnk.tambah');
+        Route::get('sunting/{id}', \App\Http\Livewire\Stnk\Sunting::class)->name('stnk.sunting');
+        Route::get('semua', \App\Http\Livewire\Stnk\Semua::class)->name('stnk.semua');
+    });
+
+    Route::group(['prefix' => 'tilang'], function (){
+        Route::get('tambah', \App\Http\Livewire\Tilang\Tambah::class)->name('tilang.tambah');
+        Route::get('sunting/{id}', \App\Http\Livewire\Tilang\Sunting::class)->name('tilang.sunting');
+        Route::get('semua', \App\Http\Livewire\Tilang\Semua::class)->name('tilang.semua');
     });
 
     Route::group(['prefix' => 'setting'], function(){
