@@ -28,6 +28,18 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="">Identitas Kendaraan</label>
+                            <input type="text" class="form-control" wire:model="identitas_kendaraan" name="" id="" placeholder="Identitas Kendaraan">
+                            <x-error-message error="identitas_kendaraan"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Nomor Polisi</label>
+                            <input type="text" class="form-control" wire:model="nopol" name="" id="" placeholder="Nomor Polisi">
+                            <x-error-message error="nopol"/>
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Waktu Sidang</label>
                             <input type="date" class="form-control" wire:model="waktu_sidang" name="" id="">
                             <x-error-message error="waktu_sidang"/>
@@ -45,17 +57,7 @@
                             <x-error-message error="pasal_pelanggaran"/>
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Identitas Kendaraan</label>
-                            <input type="text" class="form-control" wire:model="identitas_kendaraan" name="" id="" placeholder="Identitas Kendaraan">
-                            <x-error-message error="identitas_kendaraan"/>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="">Nomor Polisi</label>
-                            <input type="text" class="form-control" wire:model="nopol" name="" id="" placeholder="Nomor Polisi">
-                            <x-error-message error="nopol"/>
-                        </div>
 
                         <div class="form-group">
                             <button class="btn btn-primary"><i class="fa fa-save mr-1"></i>Simpan Data</button>
