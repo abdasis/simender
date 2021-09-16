@@ -68,6 +68,6 @@ class PenggunaTable extends DataTableComponent
 
     public function query(): Builder
     {
-        return Pengguna::query()->where('layanan', 'sim');
+        return Pengguna::query();
     }
 }

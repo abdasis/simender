@@ -21,6 +21,12 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="">Nomor Telepon</label>
+                            <input type="text" class="form-control" wire:model="telepon" placeholder="081944xxxxxx" name="" id="">
+                            <x-error-message error="telepon"/>
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Identitas Kendaraan</label>
                             <input type="text" class="form-control" placeholder="Identitas Kendaraan" wire:model="identitas_kendaraan" name="" id="">
                             <x-error-message error="identitas_kendaraan"/>

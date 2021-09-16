@@ -9,7 +9,7 @@ use Livewire\Component;
 class Tambah extends Component
 {
 
-    public $nama_lengkap,$tanggal_lahir, $identitas_kendaraan, $pajak_tahunan, $pajak_lima_tahun;
+    public $nama_lengkap,$tanggal_lahir, $identitas_kendaraan, $pajak_tahunan, $pajak_lima_tahun, $telepon;
 
     public function rules()
     {
@@ -18,7 +18,8 @@ class Tambah extends Component
             'tanggal_lahir' => 'required',
             'identitas_kendaraan' => 'required',
             'pajak_tahunan' => 'required',
-            'pajak_lima_tahun' => 'required'
+            'pajak_lima_tahun' => 'required',
+            'telepon' => 'required'
         ];
     }
 
@@ -28,6 +29,7 @@ class Tambah extends Component
         try {
             $stnk = new Stnk();
             $stnk->nama_lengkap = $this->nama_lengkap;
+            $stnk->telepon = $this->telepon;
             $stnk->identitas_kendaraan = $this->identitas_kendaraan;
             $stnk->tanggal_lahir = $this->tanggal_lahir;
             $stnk->pajak_tahunan = $this->pajak_tahunan;

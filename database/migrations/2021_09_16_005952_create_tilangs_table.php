@@ -19,6 +19,7 @@ class CreateTilangsTable extends Migration
             $table->string('tanggal_lahir');
             $table->string('telepon');
             $table->date('waktu_sidang' );
+            $table->longText('tempat_sidang');
             $table->string('pasal_pelanggaran');
             $table->string('identitas_kendaraan');
             $table->boolean('diambil')->default(0);

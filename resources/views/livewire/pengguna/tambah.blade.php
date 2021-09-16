@@ -30,30 +30,19 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Jenis Layanan</label>
-                            <select wire:model="layanan" name="" class="form-control" id="">
-                                <option value="">Pilih Layanan</option>
-                                <option value="stnk">STNK</option>
-                                <option value="sim">SIM</option>
+                            <label for="">Jenis SIM</label>
+                            <select wire:model="jenis_sim" name="" class="form-control" id="">
+                                <option value="">Pilih Jenis SIM</option>
+                                <option value="sim a">SIM A</option>
+                                <option value="sim b1">SIM B1</option>
+                                <option value="sim b2">SIM B2</option>
+                                <option value="sim c">SIM C</option>
+                                <option value="sim d">SIM D</option>
+                                <option value="sim a umum">SIM A Umum</option>
+                                <option value="sim b1 umum">SIM B1 Umum</option>
+                                <option value="sim b2 umum">SIM B2 Umum</option>
                             </select>
                         </div>
-
-                        @if($layanan == 'sim')
-                            <div class="form-group">
-                                <label for="">Jenis SIM</label>
-                                <select wire:model="jenis_sim" name="" class="form-control" id="">
-                                    <option value="">Pilih Jenis SIM</option>
-                                    <option value="sim a">SIM A</option>
-                                    <option value="sim b1">SIM B1</option>
-                                    <option value="sim b2">SIM B2</option>
-                                    <option value="sim c">SIM C</option>
-                                    <option value="sim d">SIM D</option>
-                                    <option value="sim a umum">SIM A Umum</option>
-                                    <option value="sim b1 umum">SIM B1 Umum</option>
-                                    <option value="sim b2 umum">SIM B2 Umum</option>
-                                </select>
-                            </div>
-                        @endif
 
                         <div class="form-group">
                             <label for="">Tanggal Pendaftaran</label>

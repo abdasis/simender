@@ -16,6 +16,7 @@ class CreateStnksTable extends Migration
         Schema::create('stnks', function (Blueprint $table) {
             $table->id();
             $table->string('nama_lengkap');
+            $table->string('telepon');
             $table->string('tanggal_lahir');
             $table->string('identitas_kendaraan');
             $table->date('pajak_tahunan');
