@@ -60,7 +60,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('pengguna.semua')}}" class="nav-link {{request()->is('admin/sim/data-sim') ? 'active' : ''}}">
+                                <a href="{{route('pengguna.semua')}}" class="nav-link {{request()->is('admin/sim/semua') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Semua Data</p>
                                 </a>
@@ -85,7 +85,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('stnk.semua')}}" class="nav-link {{request()->is('admin/stnk/data-sim') ? 'active' : ''}}">
+                                <a href="{{route('stnk.semua')}}" class="nav-link {{request()->is('admin/stnk/semua') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Semua Data</p>
                                 </a>
@@ -109,7 +109,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('tilang.semua')}}" class="nav-link {{request()->is('admin/tilang/data-sim') ? 'active' : ''}}">
+                                <a href="{{route('tilang.semua')}}" class="nav-link {{request()->is('admin/tilang/semua') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Semua Data</p>
                                 </a>
