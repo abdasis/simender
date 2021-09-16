@@ -22,6 +22,7 @@ class CreateTilangsTable extends Migration
             $table->longText('tempat_sidang');
             $table->string('pasal_pelanggaran');
             $table->string('identitas_kendaraan');
+            $table->string('nopol');
             $table->boolean('diambil')->default(0);
             $table->string('dibuat_oleh');
             $table->string('diupdate_oleh');

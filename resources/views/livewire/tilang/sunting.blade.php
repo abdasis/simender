@@ -34,8 +34,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Tempat Pengambilan</label>
-                            <input type="text" class="form-control" wire:model="tempat_sidang" placeholder="Tempat Pengambilan" name="" id="">
+                            <label for="">Tempat Sidang</label>
+                            <input type="text" class="form-control" wire:model="tempat_sidang" placeholder="Tempat sidang" name="" id="">
                             <x-error-message error="tempat_sidang"/>
                         </div>
 
@@ -49,6 +49,12 @@
                             <label for="">Identitas Kendaraan</label>
                             <input type="text" class="form-control" wire:model="identitas_kendaraan" name="" id="" placeholder="Identitas Kendaraan">
                             <x-error-message error="identitas_kendaraan"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Nomor Polisi</label>
+                            <input type="text" class="form-control" wire:model="nopol" name="" id="" placeholder="Nomor Polisi">
+                            <x-error-message error="nopol"/>
                         </div>
 
                         <div class="form-group">

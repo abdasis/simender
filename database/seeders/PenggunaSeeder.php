@@ -15,9 +15,9 @@ class PenggunaSeeder extends Seeder
     public function run()
     {
         User::create([
-           'name' => 'Abd. Asis',
-           'email' => 'id.abdasis@gmail.com',
-           'password' => \Hash::make('rahasia123')
+           'name' => 'Polres Tegal',
+           'email' => 'id.polrestegal@gmail.com',
+           'password' => \Hash::make('(randomuser123)')
         ]);
     }
 }

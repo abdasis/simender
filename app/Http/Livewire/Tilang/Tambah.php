@@ -8,13 +8,14 @@ use Livewire\Component;
 
 class Tambah extends Component
 {
-    public $nama_lengkap, $tanggal_lahir, $telepon, $waktu_sidang, $pasal_pelanggaran, $identitas_kendaraan, $tempat_sidang;
+    public $nama_lengkap, $tanggal_lahir, $telepon, $waktu_sidang, $pasal_pelanggaran, $identitas_kendaraan, $tempat_sidang, $nopol;
 
     public function rules()
     {
         return[
             'nama_lengkap' => 'required',
             'tanggal_lahir' => 'required',
+            'nopol' => 'required',
             'telepon' => 'required|numeric',
             'waktu_sidang' => 'date',
             'tempat_sidang' => 'required',
@@ -31,6 +32,7 @@ class Tambah extends Component
             $tilang->nama_lengkap = $this->nama_lengkap;
             $tilang->tanggal_lahir = $this->tanggal_lahir;
             $tilang->telepon = $this->telepon;
+            $tilang->nopol = $this->nopol;
             $tilang->waktu_sidang = $this->waktu_sidang;
             $tilang->tempat_sidang = $this->tempat_sidang;
             $tilang->pasal_pelanggaran = $this->pasal_pelanggaran;
