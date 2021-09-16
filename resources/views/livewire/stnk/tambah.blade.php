@@ -34,6 +34,13 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="">Nomor Polisi</label>
+                            <input type="text" class="form-control" placeholder="M 4515 JR " wire:model="nopol" name="" id="">
+                            <x-error-message error="nopol"/>
+
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Pajak Tahunan</label>
                             <input type="date" class="form-control" wire:model="pajak_tahunan" name="" id="">
                             <x-error-message error="pajak_tahunan"/>

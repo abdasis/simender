@@ -30,6 +30,12 @@
                             <label for="">Identitas Kendaraan</label>
                             <input type="text" class="form-control" placeholder="Identitas Kendaraan" wire:model="identitas_kendaraan" name="" id="">
                             <x-error-message error="identitas_kendaraan"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Nomor Polisi</label>
+                            <input type="text" class="form-control" placeholder="M 4515 JR " wire:model="nopol" name="" id="">
+                            <x-error-message error="nopol"/>
 
                         </div>
 

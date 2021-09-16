@@ -11,7 +11,7 @@
             <!-- Sidebar user (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{asset('dist/img/user8-128x128.jpg')}}" class="img-circle " alt="User Image">
+                    <i class="fa fa-2x fa-user-circle img-circle text-muted"></i>
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">{{Auth::user()->name}}</a>

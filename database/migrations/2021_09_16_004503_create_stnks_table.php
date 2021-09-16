@@ -19,6 +19,7 @@ class CreateStnksTable extends Migration
             $table->string('telepon');
             $table->string('tanggal_lahir');
             $table->string('identitas_kendaraan');
+            $table->string('nopol');
             $table->date('pajak_tahunan');
             $table->date('pajak_lima_tahun');
             $table->string('dibuat_oleh');
