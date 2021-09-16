@@ -54,8 +54,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::group(['prefix' => 'laporan', 'middleware' => 'auth'], function(){
         Route::get('pengiriman', \App\Http\Livewire\Laporan\Pengiriman::class)->name('laporan');
     });
-});
 
+
+});
+Route::get('pendaftaran-sim', \App\Http\Livewire\PendaftaranSim::class)->name('pendaftaran.sim');
+Route::get('pendaftaran-stnk', \App\Http\Livewire\PendaftaranStnk::class)->name('pendaftaran.stnk');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
