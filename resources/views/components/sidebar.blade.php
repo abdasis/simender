@@ -54,13 +54,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a href="{{route('pengguna.tambah')}}" class="nav-link {{request()->is('admin/pengguna/tambah') ? 'active' : ''}}">
+                                <a href="{{route('pengguna.tambah')}}" class="nav-link {{request()->is('admin/sim/tambah') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Tambah</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('pengguna.semua')}}" class="nav-link {{request()->is('admin/pengguna/data-sim') ? 'active' : ''}}">
+                                <a href="{{route('pengguna.semua')}}" class="nav-link {{request()->is('admin/sim/data-sim') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Semua Data</p>
                                 </a>
@@ -103,13 +103,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a href="{{route('tilang.tambah')}}" class="nav-link {{request()->is('admin/pengguna/tambah') ? 'active' : ''}}">
+                                <a href="{{route('tilang.tambah')}}" class="nav-link {{request()->is('admin/tilang/tambah') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Tambah</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('tilang.semua')}}" class="nav-link {{request()->is('admin/pengguna/data-sim') ? 'active' : ''}}">
+                                <a href="{{route('tilang.semua')}}" class="nav-link {{request()->is('admin/tilang/data-sim') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Semua Data</p>
                                 </a>
@@ -118,7 +118,7 @@
                     </li>
 
 
-                    <li class="nav-item {{request()->is('admin/setting/*') ? 'menu-open active' : ''}}">
+                    <li class="nav-item {{request()->is('admin/setting/*') ? 'menu-open' : ''}}">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-tools"></i>
                             <p>
