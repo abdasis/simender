@@ -45,6 +45,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
        Route::get('whatsapp', \App\Http\Livewire\Setting\Whatsapp::class)->name('setting.whatsapp');
     });
 
+    Route::group(['prefix' => 'pesan'], function(){
+        Route::get('stnk', \App\Http\Livewire\Pesan\NotifStnk::class)->name('pesan.stnk');
+        Route::get('sim', \App\Http\Livewire\Pesan\NotifSim::class)->name('pesan.sim');
+        Route::get('pajak', \App\Http\Livewire\Pesan\NotifPajak::class)->name('pesan.pajak');
+    });
+
     Route::group(['prefix' => 'laporan', 'middleware' => 'auth'], function(){
         Route::get('pengiriman', \App\Http\Livewire\Laporan\Pengiriman::class)->name('laporan');
     });

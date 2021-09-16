@@ -16,6 +16,7 @@ class CreatePenggunasTable extends Migration
         Schema::create('penggunas', function (Blueprint $table) {
             $table->id();
             $table->string('nama_lengkap');
+            $table->longText('alamat');
             $table->date('tanggal_lahir');
             $table->string('telepon');
             $table->string('jenis_sim');

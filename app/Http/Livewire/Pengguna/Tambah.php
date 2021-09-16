@@ -2,20 +2,23 @@
 
 namespace App\Http\Livewire\Pengguna;
 
+use App\Models\NotifSim;
 use App\Models\Pengguna;
 use Carbon\Carbon;
 use Illuminate\Database\QueryException;
 use Livewire\Component;
+use function Livewire\str;
 
 class Tambah extends Component
 {
-    public $nama_lengkap, $jenis_sim, $tanggal_lahir, $telepon ,$masa_berlaku, $tanggal_pendaftaran, $layanan;
+    public $nama_lengkap, $jenis_sim, $tanggal_lahir, $telepon ,$masa_berlaku, $tanggal_pendaftaran, $layanan, $alamat;
     public function rules()
     {
         return [
             'nama_lengkap' => 'required',
             'tanggal_lahir' => 'required',
             'telepon' => 'required',
+            'alamat' => 'required',
             'jenis_sim' => 'required_if:layanan,==,sim',
             'tanggal_pendaftaran' => 'required',
             'masa_berlaku' => 'required',
@@ -29,6 +32,7 @@ class Tambah extends Component
             $pengguna->nama_lengkap = $this->nama_lengkap;
             $pengguna->tanggal_lahir = $this->tanggal_lahir;
             $pengguna->telepon = $this->telepon;
+            $pengguna->alamat = $this->alamat;
             $pengguna->jenis_sim = $this->jenis_sim;
             $pengguna->tanggal_pendaftaran = $this->tanggal_pendaftaran;
             $pengguna->masa_berlaku = $this->masa_berlaku;
@@ -36,13 +40,30 @@ class Tambah extends Component
             $this->alert('success', 'Data berhasil disimpan');
 
             /*membuat parameter untuk kebutuhan wablas*/
-            $tanggal = Carbon::parse($this->masa_berlaku)->subMonth()->format('Y-m-d');
+            $satu_bulan = Carbon::parse($this->masa_berlaku)->subMonth()->format('Y-m-d');
+            $dua_minggu = Carbon::parse($this->masa_berlaku)->subWeeks(2)->format('Y-m-d');
+            $jatuh_tempo = Carbon::parse($this->masa_berlaku)->subMonth()->format('Y-m-d');
+
             $waktu = Carbon::now()->format('H:i');
 
             $jenis_layanan = $this->jenis_sim ?? $this->layanan;
 
-            kirimNotif($this->telepon, 'Hai ' . \Str::title($this->nama_lengkap) . ' ' . \Str::upper($jenis_layanan) . ' telah terdaftar di satpos 1329 Satlantas Polres Tegal Rembang masa berlaku ' . \Str::upper($jenis_layanan) . ' anda sampai dengan ' . Carbon::parse($this->masa_berlaku)->format('d F Y'));
-            buatPengingat($this->telepon, 'Hai ' . \Str::title($this->nama_lengkap) . ' ' . \Str::upper($jenis_layanan) . ' telah terdaftar di satpos 1329 Satlantas Polres Tegal Rembang masa berlaku ' . \Str::upper($jenis_layanan) . ' anda sampai dengan ' . Carbon::parse($this->masa_berlaku)->format('d F y'), $tanggal, $waktu );
+            $isi_pesan = NotifSim::first();
+            $nama_lengkap = str_replace(':nama_lengkap', $this->nama_lengkap, $isi_pesan->pendaftaran);
+            $pesan_pendaftaran = str_replace(':alamat', \Str::upper($this->alamat), $nama_lengkap);
+
+            $notif_satu_bulan = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->satu_bulan);
+            $notif_dua_minggu = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->dua_minggu);
+            $notif_jatuh_tempo = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->jatuh_tempo);
+
+
+
+            kirimNotif($this->telepon, $pesan_pendaftaran);
+
+            buatPengingat($this->telepon, $notif_satu_bulan , $satu_bulan, $waktu );
+            buatPengingat($this->telepon, $notif_dua_minggu , $dua_minggu, $waktu );
+            buatPengingat($this->telepon, $notif_jatuh_tempo , $jatuh_tempo, $waktu );
+
             $this->reset();
         }catch (QueryException $exception){
             $this->alert('error', $exception->getMessage());

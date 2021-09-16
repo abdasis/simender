@@ -10,7 +10,7 @@ use Livewire\Component;
 class Sunting extends Component
 {
 
-    public $nama_lengkap, $jenis_sim, $tanggal_lahir, $telepon ,$masa_berlaku, $tanggal_pendaftaran, $layanan;
+    public $nama_lengkap, $jenis_sim, $tanggal_lahir, $telepon ,$masa_berlaku, $tanggal_pendaftaran, $layanan, $alamat;
     public $pengguna_id;
 
     public function mount($id)
@@ -20,6 +20,7 @@ class Sunting extends Component
         $this->jenis_sim = $pengguna->jenis_sim;
         $this->tanggal_lahir = $pengguna->tanggal_lahir;
         $this->telepon = $pengguna->telepon;
+        $this->alamat = $pengguna->alamat;
         $this->masa_berlaku = $pengguna->masa_berlaku;
         $this->tanggal_pendaftaran = $pengguna->tanggal_pendaftaran;
         $this->pengguna_id = $pengguna->id;
@@ -31,6 +32,7 @@ class Sunting extends Component
             'nama_lengkap' => 'required',
             'tanggal_lahir' => 'required',
             'telepon' => 'required',
+            'alamat' => 'required',
             'jenis_sim' => 'required_if:layanan,==,sim',
             'tanggal_pendaftaran' => 'required',
             'masa_berlaku' => 'required',
@@ -43,6 +45,7 @@ class Sunting extends Component
             $pengguna->nama_lengkap = $this->nama_lengkap;
             $pengguna->tanggal_lahir = $this->tanggal_lahir;
             $pengguna->telepon = $this->telepon;
+            $pengguna->alamat = $this->alamat;
             $pengguna->jenis_sim = $this->jenis_sim;
             $pengguna->tanggal_pendaftaran = $this->tanggal_pendaftaran;
             $pengguna->masa_berlaku = $this->masa_berlaku;

@@ -142,6 +142,37 @@
                         </ul>
                     </li>
 
+                    <li class="nav-item {{request()->is('admin/pesan/*') ? 'menu-open' : ''}}">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-comment-alt"></i>
+                            <p>
+                                Custom Notif
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('pesan.sim')}}" class="nav-link {{request()->is('admin/pesan/sim') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>SIM</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('pesan.stnk')}}" class="nav-link {{request()->is('admin/pesan/stnk') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>STNK</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('pesan.pajak')}}" class="nav-link {{request()->is('admin/pesan/pajak') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Pajak</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item">
                         <a href="{{route('laporan')}}" class="nav-link">
                             <i class="nav-icon fas fa-paper-plane"></i>

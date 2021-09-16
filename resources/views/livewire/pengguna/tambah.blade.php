@@ -60,6 +60,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="">Alamat</label>
+                            <textarea name="" class="form-control" wire:model="alamat" id="" cols="30" rows="10"></textarea>
+                        </div>
+
+                        <div class="form-group">
                             <button class="btn btn-danger">Reset</button>
                             <button class="btn btn-primary">Simpan</button>
                         </div>
