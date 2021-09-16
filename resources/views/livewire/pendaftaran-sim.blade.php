@@ -1,23 +1,16 @@
 <div>
     {{-- The whole world belongs to you. --}}
-    <div class="jumbotron">
+    <div class="jumbotron" id="header">
         <div class="container">
-            <h1 class="display-4">Selamat Datang Di Polres Tegal</h1>
-            <p class="lead">Pendaftaran SIM Online.</p>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="form-wrapper">
         <div class="row justify-content-center">
-            <div class="col-md-7 col-sm-12">
-                @if(session()->has('whatsappError'))
-                    <div class="alert alert-danger">
-                        {{session()->get('whatsappError')}}
-                    </div>
-                @endif
-                <div class="card card-outline card-blue">
-                    <div class="card-header">
-                        Tambah Pengguna
+            <div class="col-md-8 col-sm-12">
+                <div class="card card-outline card-danger">
+                    <div class="card-header text-center">
+                        Pendaftaran SIM Online
                     </div>
                     <div class="card-body">
                         <form wire:submit.prevent="simpan">
@@ -84,3 +77,23 @@
 
     </div>
 </div>
+
+@push('css')
+    <style>
+        body{
+            background: #f1f1f1;
+        }
+        #header{
+            background: url(https://polrestegal.id/wp-content/uploads/2021/08/7447e91a-4c9f-4d5e-90bb-b5dba6265f4c.jpg) no-repeat;
+            background-size: cover;
+            min-height: 700px;
+            background-position: top;
+            background-origin: border-box;
+        }
+
+        #form-wrapper{
+            margin-top: -120px;
+        }
+
+    </style>
+@endpush
