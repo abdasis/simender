@@ -24,6 +24,7 @@ class CreateTilangsTable extends Migration
             $table->string('identitas_kendaraan');
             $table->string('nopol');
             $table->boolean('diambil')->default(0);
+            $table->string('briva')->nullable();
             $table->string('dibuat_oleh');
             $table->string('diupdate_oleh');
             $table->timestamps();

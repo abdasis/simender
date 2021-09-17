@@ -78,7 +78,11 @@
                 </div>
             </div>
         </div>
-
+        <footer class="footer bg-white py-3">
+            <div class="container">
+                <span class="text-muted">2021 SIMENDER by <a href="https://facebook.com/abdasispif">King Aziz</a>.</span>
+            </div>
+        </footer>
     </div>
 </div>
 

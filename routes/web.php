@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-   return redirect()->route('login');
+   return view('welcome');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
@@ -49,6 +49,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::get('stnk', \App\Http\Livewire\Pesan\NotifStnk::class)->name('pesan.stnk');
         Route::get('sim', \App\Http\Livewire\Pesan\NotifSim::class)->name('pesan.sim');
         Route::get('pajak', \App\Http\Livewire\Pesan\NotifPajak::class)->name('pesan.pajak');
+        Route::get('tilang', \App\Http\Livewire\Pesan\NotifTilang::class)->name('pesan.tilang');
     });
 
     Route::group(['prefix' => 'laporan', 'middleware' => 'auth'], function(){

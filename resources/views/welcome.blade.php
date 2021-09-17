@@ -10,10 +10,37 @@
 
     <title>Hello, world!</title>
 </head>
-<body>
-<div class="bg-light" style="min-height: 100vh; background: url(https://polrestegal.id/wp-content/uploads/2021/08/7447e91a-4c9f-4d5e-90bb-b5dba6265f4c.jpg) no-repeat; background-size: cover">
+<body class="bg-light">
+<div class="container" id="form-wrapper">
+    <div class="row justify-content-center" style="min-height: 92vh">
+        <div class="col-md-5 col-sm-12 mx-auto my-auto" >
+            <div class="card border-0 shadow-sm ">
+                <div class="card-header border-light bg-white text-center">
+                    <h5>Pilih Jenis Layanan</h5>
+                </div>
+                <div class="card-body p-5">
+                    <div class="alert alert-info">
+                        Selamat Data di Sistem Pengingat Perpanjangan SIM dan STNK silahkan pilih layanan dibawah untuk mendaftar
+                    </div>
+                    <a href="{{route('pendaftaran.sim')}}" class="d-grid gap-2 mb-3">
+                        <button class="btn btn-light">Reminder SIM</button>
+                    </a>
 
+                    <a href="{{route('pendaftaran.stnk')}}">
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-light">Reminder STNK</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<footer class="footer bg-white py-3">
+    <div class="container">
+        <span class="text-muted">2021 SIMENDER by <a href="https://facebook.com/abdasispif">King Aziz</a>.</span>
+    </div>
+</footer>
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->

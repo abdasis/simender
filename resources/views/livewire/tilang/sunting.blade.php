@@ -69,6 +69,11 @@
                             <x-error-message error="pasal_pelanggaran"/>
                         </div>
 
+                        <div class="form-group">
+                            <label for="">Briva</label>
+                            <input type="text" class="form-control" wire:model="briva" name="" id="" placeholder="Masukan Briva">
+                            <x-error-message error="pasal_pelanggaran"/>
+                        </div>
 
 
                         <div class="form-group">

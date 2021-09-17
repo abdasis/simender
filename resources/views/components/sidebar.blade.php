@@ -170,6 +170,13 @@
                                     <p>Pajak</p>
                                 </a>
                             </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('pesan.tilang')}}" class="nav-link {{request()->is('admin/pesan/tilang') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Tilang</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
