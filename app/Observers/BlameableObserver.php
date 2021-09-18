@@ -8,8 +8,8 @@ class BlameableObserver
 {
     public function creating(Model $model)
     {
-        $model->dibuat_oleh = \Auth::user()->name;
-        $model->diupdate_oleh = \Auth::user()->name;
+        $model->dibuat_oleh = \Auth::user()->name ?? 'Umum';
+        $model->diupdate_oleh = \Auth::user()->name ?? 'Umum';
     }
 
     public function updating(Model $model)
