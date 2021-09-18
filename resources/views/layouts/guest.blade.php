@@ -112,5 +112,8 @@
 <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 @livewireScripts
 @stack('js')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+</script>
+<x-livewire-alert::scripts />
 </body>
 </html>
