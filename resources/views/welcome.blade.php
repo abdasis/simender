@@ -116,7 +116,7 @@
         </div>
     </div>
     <div class="container">
-        <span class="text-muted">2021 SIMENDER by <a href="https://facebook.com/abdasispif">King Aziz</a>.</span>
+        <span class="text-muted">2021 SIMENDER by <a href="https://polrestegal.id">Polres Tegal</a>.</span>
     </div>
 </footer>
 <!-- Optional JavaScript; choose one of the two! -->
