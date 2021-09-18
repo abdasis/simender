@@ -93,6 +93,8 @@ class PendaftaranStnk extends Component
             buatPengingat($this->telepon, $notif_pajak_satu_bulan , $satu_bulan_lima_tahun, $waktu );
             buatPengingat($this->telepon, $notif_pajak_dua_minggu , $dua_minggu_lima_tahun, $waktu );
             buatPengingat($this->telepon, $notif_pajak_jatuh_tempo , $jatuh_tempo_lima_tahun, $waktu );
+
+            $this->reset();
         }catch (QueryException $exception){
             $this->alert('error', 'Terjadi kesalahan saat menambahkan data' . $exception->getMessage());
         }
