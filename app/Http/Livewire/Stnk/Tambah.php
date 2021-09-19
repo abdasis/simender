@@ -48,13 +48,13 @@ class Tambah extends Component
             $dua_bulan_tahunan = Carbon::parse($this->pajak_tahunan)->subMonths(2)->format('Y-m-d');
             $satu_bulan_tahunan = Carbon::parse($this->pajak_tahunan)->subMonth()->format('Y-m-d');
             $dua_minggu_tahunan = Carbon::parse($this->pajak_tahunan)->subWeeks(2)->format('Y-m-d');
-            $jatuh_tempo_tahunan = Carbon::parse($this->pajak_tahunan);
+            $jatuh_tempo_tahunan = Carbon::parse($this->pajak_tahunan)->format('Y-m-d');
 
             /*membuat parameter untuk kebutuhan wablas*/
             $dua_bulan_lima_tahun = Carbon::parse($this->pajak_lima_tahun)->subMonths(2)->format('Y-m-d');
             $satu_bulan_lima_tahun = Carbon::parse($this->pajak_lima_tahun)->subMonth()->format('Y-m-d');
             $dua_minggu_lima_tahun = Carbon::parse($this->pajak_lima_tahun)->subWeekdays(2)->format('Y-m-d');
-            $jatuh_tempo_lima_tahun = Carbon::parse($this->pajak_lima_tahun);
+            $jatuh_tempo_lima_tahun = Carbon::parse($this->pajak_lima_tahun)->format('Y-m-d');
 
             $waktu = Carbon::now()->format('H:i');
 

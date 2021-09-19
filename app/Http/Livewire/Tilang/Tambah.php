@@ -47,7 +47,7 @@ class Tambah extends Component
             $this->alert('success', 'Data berhasil disimpan');
 
 
-            $jatuh_tempo = Carbon::parse($this->waktu_sidang);
+            $jatuh_tempo = Carbon::parse($this->waktu_sidang)->format('Y-m-d');
 
             $waktu = Carbon::now()->format('H:i');
 
