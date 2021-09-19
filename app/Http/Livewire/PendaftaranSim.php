@@ -52,6 +52,7 @@ class PendaftaranSim extends Component
             $isi_pesan = NotifSim::first();
 
             $diganti = [
+                ':nama_lengkap' => $this->nama_lengkap,
                 ':jatuh_tempo' => $this->masa_berlaku,
                 ':jenis_sim' => $this->jenis_sim,
                 ':alamat' => $this->alamat,
