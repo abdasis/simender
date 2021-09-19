@@ -43,7 +43,7 @@ class PendaftaranSim extends Component
             $satu_bulan = Carbon::parse($this->masa_berlaku)->subMonth()->format('Y-m-d');
             $dua_minggu = Carbon::parse($this->masa_berlaku)->subWeeks(2)->format('Y-m-d');
             $satu_minggu = Carbon::parse($this->masa_berlaku)->subWeeks(1)->format('Y-m-d');
-            $jatuh_tempo = Carbon::parse($this->masa_berlaku);
+            $jatuh_tempo = Carbon::parse($this->masa_berlaku)->format('Y-m-d');
 
             $waktu = Carbon::now()->format('H:i');
 
