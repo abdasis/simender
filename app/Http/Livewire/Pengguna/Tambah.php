@@ -49,15 +49,23 @@ class Tambah extends Component
 
             $jenis_layanan = $this->jenis_sim ?? $this->layanan;
 
+
             $isi_pesan = NotifSim::first();
-            $nama_lengkap = str_replace(':nama_lengkap', $this->nama_lengkap, $isi_pesan->pendaftaran);
-            $pesan_pendaftaran = str_replace(':alamat', \Str::upper($this->alamat), $nama_lengkap);
 
-            $notif_satu_bulan = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->satu_bulan);
-            $notif_dua_minggu = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->dua_minggu);
-            $notif_satu_minggu = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->satu_minggu);
-            $notif_jatuh_tempo = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->jatuh_tempo);
+            $diganti = [
+                ':jatuh_tempo' => $this->pajak_tahunan,
+                ':jenis_sim' => $this->jenis_sim,
+                ':alamat' => $this->alamat,
+                'jatuh_tempo' => $jatuh_tempo,
+            ];
 
+
+            $pesan_pendaftaran = str_replace(array_keys($diganti), $diganti, $isi_pesan->pendaftaran);
+
+            $notif_satu_bulan = str_replace(array_keys($diganti), $diganti, $isi_pesan->satu_bulan);
+            $notif_dua_minggu = str_replace(array_keys($diganti), $diganti, $isi_pesan->dua_minggu);
+            $notif_satu_minggu = str_replace(array_keys($diganti), $diganti, $isi_pesan->satu_minggu);
+            $notif_jatuh_tempo = str_replace(array_keys($diganti), $diganti, $isi_pesan->jatuh_tempo);
 
 
             kirimNotif($this->telepon, $pesan_pendaftaran);
