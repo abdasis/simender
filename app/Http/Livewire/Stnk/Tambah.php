@@ -58,7 +58,6 @@ class Tambah extends Component
 
             $waktu = Carbon::now()->format('H:i');
 
-
             $pesan_stnk = NotifStnk::first();
             $pesan_pajak = NotifPajakLima::first();
 
@@ -68,11 +67,7 @@ class Tambah extends Component
             ];
 
             $pendaftaran = str_replace(array_keys($diganti), $diganti, $pesan_stnk->pendaftaran);
-
-
-
-
-
+            
             $notif_stnk_dua_bulan = str_replace(array_keys($diganti),$diganti, $pesan_stnk->dua_bulan);
             $notif_stnk_satu_bulan = str_replace(array_keys($diganti),$diganti, $pesan_stnk->satu_bulan);
             $notif_stnk_dua_minggu = str_replace(array_keys($diganti),$diganti, $pesan_stnk->dua_minggu);

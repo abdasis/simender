@@ -24,8 +24,8 @@
             height: 100%;
             opacity: .09;
             z-index: -1;
-            background: url("https://polrestegal.id/wp-content/uploads/2021/08/7447e91a-4c9f-4d5e-90bb-b5dba6265f4c.jpg") no-repeat;
-            background-size: cover;
+            background: url("/dist/img/bg.jpg");
+            background-repeat: round;
         }
     </style>
 </head>

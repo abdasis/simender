@@ -42,7 +42,8 @@ class PendaftaranSim extends Component
             /*membuat parameter untuk kebutuhan wablas*/
             $satu_bulan = Carbon::parse($this->masa_berlaku)->subMonth()->format('Y-m-d');
             $dua_minggu = Carbon::parse($this->masa_berlaku)->subWeeks(2)->format('Y-m-d');
-            $jatuh_tempo = Carbon::parse($this->masa_berlaku)->subMonth()->format('Y-m-d');
+            $satu_minggu = Carbon::parse($this->masa_berlaku)->subWeeks(1)->format('Y-m-d');
+            $jatuh_tempo = Carbon::parse($this->masa_berlaku);
 
             $waktu = Carbon::now()->format('H:i');
 
@@ -54,6 +55,7 @@ class PendaftaranSim extends Component
 
             $notif_satu_bulan = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->satu_bulan);
             $notif_dua_minggu = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->dua_minggu);
+            $notif_satu_minggu = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->satu_minggu);
             $notif_jatuh_tempo = str_replace(':jatuh_tempo', $this->masa_berlaku, $isi_pesan->jatuh_tempo);
 
 
@@ -62,6 +64,7 @@ class PendaftaranSim extends Component
 
             buatPengingat($this->telepon, $notif_satu_bulan , $satu_bulan, $waktu );
             buatPengingat($this->telepon, $notif_dua_minggu , $dua_minggu, $waktu );
+            buatPengingat($this->telepon, $notif_satu_minggu , $satu_minggu, $waktu );
             buatPengingat($this->telepon, $notif_jatuh_tempo , $jatuh_tempo, $waktu );
 
             $this->reset();

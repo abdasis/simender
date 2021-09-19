@@ -3,7 +3,7 @@
         <div class="container" id="form-wrapper">
             <div class="row justify-content-center" style="min-height: 100vh">
                 <div class="col-md-8 col-sm-12 my-auto">
-                    <div class="card card-outline card-danger">
+                    <div class="card card-outline card-danger my-5">
                         <div class="card-header text-center">
                             Pendaftaran SIM Online
                         </div>

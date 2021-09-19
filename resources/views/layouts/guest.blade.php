@@ -30,8 +30,7 @@
             height: 100%;
             opacity: .09;
             z-index: -1;
-            background: url("https://polrestegal.id/wp-content/uploads/2021/08/7447e91a-4c9f-4d5e-90bb-b5dba6265f4c.jpg") no-repeat;
-            background-size: cover;
+            background: url("/dist/img/bg.jpg") round;
         }
     </style>
 </head>
@@ -42,7 +41,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-danger d-flex flex-row">
                 <a class="navbar-brand" href="{{url('/')}}">
-                    <img src="https://polrestegal.id/wp-content/uploads/2021/08/logo.png" height="30px" width="auto" alt="Logo">
+                    <img src="{{asset('dist/img/logo.png')}}" height="30px" width="auto" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
