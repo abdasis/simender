@@ -65,6 +65,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="">Alamat</label>
+                            <textarea name="" class="form-control" wire:model="alamat" id="" cols="30" rows="10"></textarea>
+                        </div>
+
+                        <div class="form-group">
                             <button class="btn btn-primary"><i class="fa fa-save mr-1"></i>Simpan Data</button>
                         </div>
                     </form>

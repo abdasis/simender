@@ -22,6 +22,7 @@ class CreateStnksTable extends Migration
             $table->string('nopol');
             $table->date('pajak_tahunan');
             $table->date('pajak_lima_tahun');
+            $table->longText('alamat')->nullable();
             $table->string('dibuat_oleh');
             $table->string('diupdate_oleh');
             $table->timestamps();

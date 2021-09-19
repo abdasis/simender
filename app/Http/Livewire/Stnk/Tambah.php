@@ -13,7 +13,7 @@ use Livewire\Component;
 class Tambah extends Component
 {
 
-    public $nama_lengkap,$tanggal_lahir, $identitas_kendaraan, $pajak_tahunan, $pajak_lima_tahun, $telepon, $nopol;
+    public $nama_lengkap,$tanggal_lahir, $identitas_kendaraan, $pajak_tahunan, $pajak_lima_tahun, $telepon, $nopol, $alamat;
 
     public function rules()
     {
@@ -25,6 +25,7 @@ class Tambah extends Component
             'pajak_lima_tahun' => 'required',
             'telepon' => 'required',
             'nopol' => 'required',
+            'alamat' => 'required',
 
         ];
     }
@@ -41,6 +42,7 @@ class Tambah extends Component
             $stnk->tanggal_lahir = $this->tanggal_lahir;
             $stnk->pajak_tahunan = $this->pajak_tahunan;
             $stnk->pajak_lima_tahun = $this->pajak_tahunan;
+            $stnk->alamat = $this->alamat;
             $stnk->save();
             $this->alert('success', 'Data berhasil disimpan');
 
@@ -63,11 +65,13 @@ class Tambah extends Component
 
             $diganti = [
                 ':jatuh_tempo' => $this->pajak_tahunan,
-                ':nopol' => $this->nopol
+                ':nopol' => $this->nopol,
+                ':alamat' => $this->alamat,
+                ':nama_lengkap' => $this->nama_lengkap
             ];
 
             $pendaftaran = str_replace(array_keys($diganti), $diganti, $pesan_stnk->pendaftaran);
-            
+
             $notif_stnk_dua_bulan = str_replace(array_keys($diganti),$diganti, $pesan_stnk->dua_bulan);
             $notif_stnk_satu_bulan = str_replace(array_keys($diganti),$diganti, $pesan_stnk->satu_bulan);
             $notif_stnk_dua_minggu = str_replace(array_keys($diganti),$diganti, $pesan_stnk->dua_minggu);

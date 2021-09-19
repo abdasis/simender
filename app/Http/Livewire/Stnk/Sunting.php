@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Sunting extends Component
 {
-    public $nama_lengkap,$tanggal_lahir, $identitas_kendaraan, $pajak_tahunan, $pajak_lima_tahun, $telepon, $nopol;
+    public $nama_lengkap,$tanggal_lahir, $identitas_kendaraan, $pajak_tahunan, $pajak_lima_tahun, $telepon, $nopol,$alamat;
     public $stnk_id;
 
     public function mount($id)
@@ -22,6 +22,7 @@ class Sunting extends Component
         $this->pajak_lima_tahun = $stnk->pajak_lima_tahun;
         $this->stnk_id = $stnk->id;
         $this->nopol = $stnk->nopol;
+        $this->alamat = $stnk->alamat;
     }
 
     public function rules()
@@ -33,7 +34,8 @@ class Sunting extends Component
             'pajak_tahunan' => 'required',
             'pajak_lima_tahun' => 'required',
             'telepon' => 'required',
-            'nopol' => 'required'
+            'nopol' => 'required',
+            'alamat' => 'required'
         ];
     }
 
@@ -46,6 +48,7 @@ class Sunting extends Component
             $stnk->identitas_kendaraan = $this->identitas_kendaraan;
             $stnk->nopol = $this->nopol;
             $stnk->telepon = $this->telepon;
+            $stnk->alamat = $this->alamat;
             $stnk->tanggal_lahir = $this->tanggal_lahir;
             $stnk->pajak_tahunan = $this->pajak_tahunan;
             $stnk->pajak_lima_tahun = $this->pajak_tahunan;

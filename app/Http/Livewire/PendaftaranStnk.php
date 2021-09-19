@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class PendaftaranStnk extends Component
 {
-    public $nama_lengkap,$tanggal_lahir, $identitas_kendaraan, $pajak_tahunan, $pajak_lima_tahun, $telepon, $nopol;
+    public $nama_lengkap,$tanggal_lahir, $identitas_kendaraan, $pajak_tahunan, $pajak_lima_tahun, $telepon, $nopol, $alamat;
 
     public function rules()
     {
@@ -23,6 +23,7 @@ class PendaftaranStnk extends Component
             'pajak_lima_tahun' => 'required',
             'telepon' => 'required',
             'nopol' => 'required',
+            'alamat' => 'required'
 
         ];
     }
@@ -36,6 +37,7 @@ class PendaftaranStnk extends Component
             $stnk->telepon = $this->telepon;
             $stnk->identitas_kendaraan = $this->identitas_kendaraan;
             $stnk->nopol = $this->nopol;
+            $stnk->alamat = $this->alamat;
             $stnk->tanggal_lahir = $this->tanggal_lahir;
             $stnk->pajak_tahunan = $this->pajak_tahunan;
             $stnk->pajak_lima_tahun = $this->pajak_tahunan;
@@ -61,7 +63,9 @@ class PendaftaranStnk extends Component
 
             $diganti = [
                 ':jatuh_tempo' => $this->pajak_tahunan,
-                ':nopol' => $this->nopol
+                ':nopol' => $this->nopol,
+                ':alamat' => $this->alamat,
+                ':nama_lengkap' => $this->nama_lengkap
             ];
 
             $pendaftaran = str_replace(array_keys($diganti), $diganti, $pesan_stnk->pendaftaran);
