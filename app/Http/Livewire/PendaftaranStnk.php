@@ -51,10 +51,10 @@ class PendaftaranStnk extends Component
             $jatuh_tempo_tahunan = Carbon::parse($this->pajak_tahunan)->format('Y-m-d');
 
             /*membuat parameter untuk kebutuhan wablas*/
-           /* $dua_bulan_lima_tahun = Carbon::parse($this->pajak_lima_tahun)->subMonths(2)->format('Y-m-d');
+            $dua_bulan_lima_tahun = Carbon::parse($this->pajak_lima_tahun)->subMonths(2)->format('Y-m-d');
             $satu_bulan_lima_tahun = Carbon::parse($this->pajak_lima_tahun)->subMonth()->format('Y-m-d');
             $dua_minggu_lima_tahun = Carbon::parse($this->pajak_lima_tahun)->subWeekdays(2)->format('Y-m-d');
-            $jatuh_tempo_lima_tahun = Carbon::parse($this->pajak_lima_tahun)->format('Y-m-d');*/
+            $jatuh_tempo_lima_tahun = Carbon::parse($this->pajak_lima_tahun)->format('Y-m-d');
 
             $waktu = Carbon::now()->format('H:i');
 
@@ -75,10 +75,10 @@ class PendaftaranStnk extends Component
             $notif_stnk_dua_minggu = str_replace(array_keys($diganti),$diganti, $pesan_stnk->dua_minggu);
             $notif_stnk_jatuh_tempo = str_replace(array_keys($diganti),$diganti, $pesan_stnk->jatuh_tempo);
 
-          /*  $notif_pajak_dua_bulan = str_replace(array_keys($diganti),$diganti, $pesan_pajak->dua_bulan);
+            $notif_pajak_dua_bulan = str_replace(array_keys($diganti),$diganti, $pesan_pajak->dua_bulan);
             $notif_pajak_satu_bulan = str_replace(array_keys($diganti),$diganti, $pesan_pajak->satu_bulan);
             $notif_pajak_dua_minggu = str_replace(array_keys($diganti),$diganti, $pesan_pajak->dua_minggu);
-            $notif_pajak_jatuh_tempo = str_replace(array_keys($diganti),$diganti, $pesan_pajak->jatuh_tempo);*/
+            $notif_pajak_jatuh_tempo = str_replace(array_keys($diganti),$diganti, $pesan_pajak->jatuh_tempo);
 
 
             kirimNotif($this->telepon, $pendaftaran);
@@ -88,10 +88,10 @@ class PendaftaranStnk extends Component
             buatPengingat($this->telepon, $notif_stnk_dua_minggu , $dua_minggu_tahunan, $waktu );
             buatPengingat($this->telepon, $notif_stnk_jatuh_tempo , $jatuh_tempo_tahunan, $waktu );
 
-           /* buatPengingat($this->telepon, $notif_pajak_dua_bulan , $dua_bulan_lima_tahun, $waktu );
+            buatPengingat($this->telepon, $notif_pajak_dua_bulan , $dua_bulan_lima_tahun, $waktu );
             buatPengingat($this->telepon, $notif_pajak_satu_bulan , $satu_bulan_lima_tahun, $waktu );
             buatPengingat($this->telepon, $notif_pajak_dua_minggu , $dua_minggu_lima_tahun, $waktu );
-            buatPengingat($this->telepon, $notif_pajak_jatuh_tempo , $jatuh_tempo_lima_tahun, $waktu );*/
+            buatPengingat($this->telepon, $notif_pajak_jatuh_tempo , $jatuh_tempo_lima_tahun, $waktu );
 
             $this->reset();
         }catch (QueryException $exception){

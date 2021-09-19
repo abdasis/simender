@@ -13,10 +13,10 @@
 
             </div>
             <form wire:submit.prevent="simpan">
-                <div class="form-group">
+               {{-- <div class="form-group">
                     <label for="">Pendaftaran</label>
                     <textarea name="" class="form-control" wire:model="pendaftaran" id="" cols="30" rows="10"></textarea>
-                </div>
+                </div>--}}
 
                 <div class="form-group">
                     <label for="">Dua Bulan</label>
