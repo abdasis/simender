@@ -53,7 +53,7 @@ class Tambah extends Component
             $isi_pesan = NotifSim::first();
 
             $diganti = [
-                ':jatuh_tempo' => $this->pajak_tahunan,
+                ':jatuh_tempo' => $this->masa_berlaku,
                 ':jenis_sim' => $this->jenis_sim,
                 ':alamat' => $this->alamat,
                 'jatuh_tempo' => $jatuh_tempo,
