@@ -28,7 +28,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: .09;
             z-index: -1;
             background: url("/dist/img/bg.jpg") round;
         }
