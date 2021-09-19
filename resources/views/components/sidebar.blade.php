@@ -164,12 +164,12 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item">
+                            {{--<li class="nav-item">
                                 <a href="{{route('pesan.pajak')}}" class="nav-link {{request()->is('admin/pesan/pajak') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Pajak</p>
                                 </a>
-                            </li>
+                            </li>--}}
 
                             <li class="nav-item">
                                 <a href="{{route('pesan.tilang')}}" class="nav-link {{request()->is('admin/pesan/tilang') ? 'active' : ''}}">
